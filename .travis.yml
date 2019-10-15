@@ -1,12 +1,12 @@
 language: node_js
 node_js:
   - 10.9.0
-  
-#!/bin/bash
-now public --token=$NOW_TOKEN
 
 cache: npm
 
+env:
+  NOW_TOKEN: "KKVluz9kB7T3vwJ5Fr8AobdI"
+  
 before_install:
   - "npm config set spin false"
   - npm i -g now
@@ -22,6 +22,7 @@ script:
   provider: script
   script: bash scripts/deploy.sh
   skip_cleanup: true
+
 
 notifications:
   slack:
