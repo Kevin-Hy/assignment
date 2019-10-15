@@ -4,19 +4,12 @@ node_js:
 
 cache: npm
 
-before_install:
-  - ls -la
-  - npm install
-  - pwd
-  
 install:
-  - ls -la
-  - pwd
+  - npm install
 
-before_deploy:
-  - ls -la
-  - cd node_modules
-  - ls -la
+script:
+  - npm run build
+  - npm run test
 
 notifications:
   slack:
